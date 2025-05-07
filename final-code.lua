@@ -74,7 +74,7 @@ Scripts:AddToggle({
 	Name = "ESP",
 	Default = false,
 	Callback = function(Value)
-		
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/arabnik/.my-script/refs/heads/main/ESP.lua')))()
 	end    
 })
 OrionLib:Init()
