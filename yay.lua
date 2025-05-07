@@ -9,7 +9,7 @@ local Window = OrionLib:MakeWindow({Name = "arabnik team script", HidePremium = 
 
 OrionLib:MakeNotification({
 	Name = "by: anti_arabnik",
-	Content = "tg: arabnik_official, ds: exorcist.arabnik, vk: idi nahuy",
+	Content = "Спасибо за покупку Премиума!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
@@ -35,7 +35,7 @@ Character:AddSlider({
 	Default = 16,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
-	ValueName = "Скорость",
+	ValueName = "Speed",
 	Callback = function(s)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 	end    
@@ -66,9 +66,15 @@ Character:AddBind({
 Scripts:AddButton({
 	Name = "arabnik script hub",
 	Callback = function()
-	loadstring(game:HttpGet(('https://raw.githubusercontent.com/arabnik/.my-script/refs/heads/main/script.lua')))()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/arabnik/.my-script/refs/heads/main/arabnik-script-hub.lua')))()
   	end    
 })
 
-
+Scripts:AddToggle({
+	Name = "ESP",
+	Default = false,
+	Callback = function(Value)
+		
+	end    
+})
 OrionLib:Init()
