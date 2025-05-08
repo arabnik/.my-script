@@ -3,13 +3,13 @@
 -- Библиотека
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 -- Само окно скрипта
-local Window = OrionLib:MakeWindow({Name = "arabnik team script", HidePremium = false, SaveConfig = false, ConfigFolder = "ttest"})
+local Window = OrionLib:MakeWindow({Name = "arabnik team script(free)", HidePremium = true, SaveConfig = false, ConfigFolder = "cfg"})
 
 -- Сообщение
 
 OrionLib:MakeNotification({
 	Name = "by: anti_arabnik",
-	Content = "Спасибо за покупку Премиума!",
+	Content = "Купите премиум скрипт, чтобы получить полный функционал!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
@@ -24,14 +24,15 @@ PremiumOnly = false
 local Scripts = Window:MakeTab({
 Name = "Скрипты",
 Icon = "rbxassetid://4483345998",
-PremiumOnly = false
+PremiumOnly = true
 })
+
 -- Главная
 
 Character:AddSlider({
 	Name = "Скорость",
 	Min = 0,
-	Max = 32,
+	Max = 64,
 	Default = 16,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
@@ -44,7 +45,7 @@ Character:AddSlider({
 Character:AddSlider({
 	Name = "Сила прыжка",
 	Min = 0,
-	Max = 50,
+	Max = 100,
 	Default = 16,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
@@ -63,18 +64,12 @@ Character:AddBind({
 	end    
 })
 
+-- Скрипты
+
 Scripts:AddButton({
 	Name = "arabnik script hub",
 	Callback = function()
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/arabnik/.my-script/refs/heads/main/arabnik-script-hub.lua')))()
   	end    
-})
-
-Scripts:AddToggle({
-	Name = "ESP",
-	Default = false,
-	Callback = function(Value)
-	loadstring(game:HttpGet(('https://raw.githubusercontent.com/arabnik/.my-script/refs/heads/main/ESP.lua')))()
-	end    
 })
 OrionLib:Init()
