@@ -16,6 +16,11 @@ OrionLib:MakeNotification({
 
 -- Секции
 
+local Main = Window:MakeTab({
+Name = "Главная",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
 local Character = Window:MakeTab({
 Name = "Персонаж",
 Icon = "rbxassetid://4483345998",
@@ -26,8 +31,20 @@ Name = "Скрипты",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = true
 })
+local DZ = Window:MakeTab({
+Name = "Опасная зона",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
 
 -- Главная
+
+Main:AddParagraph("Обновление","[+] Добавлено [+-] Фикс/Изменение [-] Удалено")
+Main:AddLabel("[+] Опасная зона(закрытие чита)")
+Main:AddLabel("[+-] Обход анти чита(в платной версии скрипта)")
+Main:AddLabel("[-] ESP(ну бля, тупо не врубался)")
+
+-- Персонаж
 
 Character:AddSlider({
 	Name = "Скорость",
@@ -72,4 +89,14 @@ Scripts:AddButton({
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/arabnik/.my-script/refs/heads/main/arabnik-script-hub.lua')))()
   	end    
 })
+
+-- Опасная зона
+
+DZ:AddButton({
+	Name = "Закрыть скрипт",
+	Callback = function()
+		OrionLib:Destroy()
+	end
+})
+
 OrionLib:Init()
